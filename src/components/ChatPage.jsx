@@ -1,34 +1,42 @@
 import { MessageList } from "react-chat-elements";
 import "react-chat-elements/dist/main.css";
+import { UserInput } from "../App";
+import { useContext, useEffect } from "react";
 
 const messages = [
 	{
 		position: "left",
 		type: "text",
-		text: "サンプルチャット",
-		date: new Date("2020-03-12 13:00:00"),
-	},
-	{
-		position: "right",
-		type: "text",
-		text: "サンプルチャット2",
-		date: new Date("2020-03-12 14:00:00"),
+		text: "こんにちは！",
+		date: new Date(),
 	},
 	{
 		position: "left",
-		type: "photo",
-		data: {
-			uri: "img/human.svg",
-			status: {
-				click: false,
-				loading: 0,
-			},
-		},
-		date: new Date("2020-03-12 15:00:00"),
+		type: "text",
+		text: "好きなテキストを入力してください！",
+		date: new Date(),
+	},
+	{
+		position: "left",
+		type: "text",
+		text: "ハッシュ化して表示します！",
+		date: new Date(),
 	},
 ];
 
 export const ChatPage = () => {
+	const { userInput, setUserInput } = useContext(UserInput);
+
+	useEffect(() => {
+		messages.push({
+			position: "right",
+			type: "text",
+			text: userInput,
+			date: new Date(),
+		});
+	}, [userInput]);
+
+	console.log(userInput);
 	return (
 		<MessageList
 			toBottomHeight={"100%"}
