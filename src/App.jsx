@@ -18,7 +18,7 @@ function App() {
 		{
 			position: "left",
 			type: "text",
-			text: "好きなテキストを入力してください！",
+			text: "ハッシュ化アルゴリズムを選択して、好きなテキストを入力してください！",
 			date: new Date(),
 		},
 		{
@@ -37,9 +37,11 @@ function App() {
 	return (
 		<>
 			<Context.Provider value={value}>
-				<Header></Header>
-				<ChatPage></ChatPage>
-				<InputArea></InputArea>
+				<div className="relative h-screen">
+					<Header></Header>
+					<ChatPage></ChatPage>
+					<InputArea></InputArea>
+				</div>
 			</Context.Provider>
 		</>
 	);

@@ -6,6 +6,7 @@ import { CreateHashMessage } from "../CreateHashMessage.jx";
 export const InputArea = () => {
 	const [input, setInput] = useState(""); // 変数を定義
 	const { messages, setMessages } = useContext(Context);
+	const { algorithm } = useContext(Context);
 
 	const buttonClick = () => {
 		let messagesClone = [...messages];
@@ -25,8 +26,7 @@ export const InputArea = () => {
 			});
 		};
 
-
-		CreateHashMessage(input)
+		CreateHashMessage(input, algorithm)
 			.then((shatxt) => {
 				setHashInput(shatxt);
 				setMessages(messagesClone);
@@ -37,7 +37,7 @@ export const InputArea = () => {
 	};
 
 	return (
-		<div className="w-1/3 absolute left-1/2 -translate-x-1/2 bottom-10 flex">
+		<div className="w-1/2 fixed left-1/2 -translate-x-1/2 bottom-10 flex ">
 			<Input
 				className="bg-white"
 				color="teal"
