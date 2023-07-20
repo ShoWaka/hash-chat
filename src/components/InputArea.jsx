@@ -25,6 +25,7 @@ export const InputArea = () => {
 			});
 		};
 
+
 		CreateHashMessage(input)
 			.then((shatxt) => {
 				setHashInput(shatxt);
