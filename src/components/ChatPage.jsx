@@ -26,15 +26,25 @@ const messages = [
 
 export const ChatPage = () => {
 	const { userInput, setUserInput } = useContext(Context);
-
-	useEffect(() => {
+	if (userInput != "") {
 		messages.push({
 			position: "right",
 			type: "text",
 			text: userInput,
 			date: new Date(),
 		});
-	}, [userInput]);
+	}
+
+	// useEffect(() => {
+	// 	if (userInput != "") {
+	// 		messages.push({
+	// 			position: "right",
+	// 			type: "text",
+	// 			text: userInput,
+	// 			date: new Date(),
+	// 		});
+	// 	}
+	// }, [userInput]);
 
 	return (
 		<MessageList

@@ -4,7 +4,7 @@ import { Context } from "../App";
 
 export const InputArea = () => {
 	const [input, setInput] = useState(""); // 変数を定義
-	
+
 	const { userInput, setUserInput } = useContext(Context);
 
 	const buttonClick = () => {
