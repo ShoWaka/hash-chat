@@ -33,6 +33,7 @@ pip install react-chat-elements 12.0.10
 
 React + Vite を用いて開発し、
 Github 上に push したプログラムを Vercel でデプロイしている
+[公開URL(Vercel)](https://hash-chat-umber.vercel.app/)
 
 # Author
 
