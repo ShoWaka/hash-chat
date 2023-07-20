@@ -1,6 +1,6 @@
 import { MessageList } from "react-chat-elements";
 import "react-chat-elements/dist/main.css";
-import { UserInput } from "../App";
+import { Context } from "../App";
 import { useContext, useEffect } from "react";
 
 const messages = [
@@ -25,7 +25,7 @@ const messages = [
 ];
 
 export const ChatPage = () => {
-	const { userInput, setUserInput } = useContext(UserInput);
+	const { userInput, setUserInput } = useContext(Context);
 
 	useEffect(() => {
 		messages.push({
@@ -36,7 +36,6 @@ export const ChatPage = () => {
 		});
 	}, [userInput]);
 
-	console.log(userInput);
 	return (
 		<MessageList
 			toBottomHeight={"100%"}

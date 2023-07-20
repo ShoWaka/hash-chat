@@ -3,7 +3,7 @@ import "./App.css";
 import { ChatPage } from "./components/ChatPage";
 import { InputArea } from "./components/InputArea";
 
-export const UserInput = createContext();
+export const Context = createContext();
 
 function App() {
 	const [userInput, setUserInput] = useState("");
@@ -13,10 +13,10 @@ function App() {
 	};
 	return (
 		<>
-			<UserInput.Provider value={value}>
+			<Context.Provider value={value}>
 				<ChatPage></ChatPage>
 				<InputArea></InputArea>
-			</UserInput.Provider>
+			</Context.Provider>
 		</>
 	);
 }

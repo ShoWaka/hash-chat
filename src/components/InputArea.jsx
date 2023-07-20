@@ -1,15 +1,15 @@
 import { Input, Button } from "@material-tailwind/react";
 import { useState, useContext } from "react";
-import { UserInput } from "../App";
+import { Context } from "../App";
 
 export const InputArea = () => {
-	const [inputText, setInputText] = useState(); // 変数を定義
-	const buttonClick = () => {
-		setUserInput(inputText);
-	};
+	const [input, setInput] = useState(""); // 変数を定義
+	
+	const { userInput, setUserInput } = useContext(Context);
 
-	const { userInput, setUserInput } = useContext(UserInput);
-	console.log(userInput);
+	const buttonClick = () => {
+		setUserInput(input);
+	};
 
 	return (
 		<div className="w-1/3 absolute left-1/2 -translate-x-1/2 bottom-10 flex">
@@ -17,9 +17,9 @@ export const InputArea = () => {
 				className="bg-white"
 				color="teal"
 				label="送信内容"
-				value={inputText}
+				value={input}
 				onChange={(e) => {
-					setInputText(e.target.value);
+					setInput(e.target.value);
 				}}
 			/>
 			<Button className="ml-2 w-24" onClick={buttonClick}>
