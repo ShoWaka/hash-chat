@@ -6,10 +6,29 @@ import { InputArea } from "./components/InputArea";
 export const Context = createContext();
 
 function App() {
-	const [userInput, setUserInput] = useState("");
+	const [messages, setMessages] = useState([
+		{
+			position: "left",
+			type: "text",
+			text: "こんにちは！",
+			date: new Date(),
+		},
+		{
+			position: "left",
+			type: "text",
+			text: "好きなテキストを入力してください！",
+			date: new Date(),
+		},
+		{
+			position: "left",
+			type: "text",
+			text: "ハッシュ化して表示します！",
+			date: new Date(),
+		},
+	]);
 	const value = {
-		userInput,
-		setUserInput,
+		messages,
+		setMessages,
 	};
 	return (
 		<>

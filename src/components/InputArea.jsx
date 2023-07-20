@@ -4,11 +4,17 @@ import { Context } from "../App";
 
 export const InputArea = () => {
 	const [input, setInput] = useState(""); // 変数を定義
-
-	const { userInput, setUserInput } = useContext(Context);
+	const { messages, setMessages } = useContext(Context);
 
 	const buttonClick = () => {
-		setUserInput(input);
+		let tmp = [...messages];
+		tmp.push({
+			position: "right",
+			type: "text",
+			text: input,
+			date: new Date(),
+		});
+		setMessages(tmp);
 	};
 
 	return (
