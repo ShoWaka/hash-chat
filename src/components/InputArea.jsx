@@ -1,20 +1,38 @@
 import { Input, Button } from "@material-tailwind/react";
 import { useState, useContext } from "react";
 import { Context } from "../App";
+import { CreateHashMessage } from "../CreateHashMessage.jx";
 
 export const InputArea = () => {
 	const [input, setInput] = useState(""); // 変数を定義
 	const { messages, setMessages } = useContext(Context);
 
 	const buttonClick = () => {
-		let tmp = [...messages];
-		tmp.push({
+		let messagesClone = [...messages];
+		messagesClone.push({
 			position: "right",
 			type: "text",
 			text: input,
 			date: new Date(),
 		});
-		setMessages(tmp);
+
+		const setHashInput = (shatxt) => {
+			messagesClone.push({
+				position: "left",
+				type: "text",
+				text: shatxt,
+				date: new Date(),
+			});
+		};
+
+		CreateHashMessage(input)
+			.then((shatxt) => {
+				setHashInput(shatxt);
+				setMessages(messagesClone);
+			})
+			.catch((e) => {
+				console.log(e.message);
+			});
 	};
 
 	return (

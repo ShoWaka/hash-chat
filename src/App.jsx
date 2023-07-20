@@ -10,7 +10,7 @@ function App() {
 		{
 			position: "left",
 			type: "text",
-			text: "こんにちは！",
+			text: "ハッシュ化した文字列で会話したいことってありますよね！？笑",
 			date: new Date(),
 		},
 		{
