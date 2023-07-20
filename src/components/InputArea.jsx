@@ -1,7 +1,7 @@
 import { Input, Button } from "@material-tailwind/react";
 import { useState, useContext } from "react";
 import { Context } from "../App";
-import { CreateHashMessage } from "../CreateHashMessage.jx";
+import { CreateHashMessage } from "../CreateHashMessage.js";
 
 export const InputArea = () => {
 	const [input, setInput] = useState(""); // 変数を定義
