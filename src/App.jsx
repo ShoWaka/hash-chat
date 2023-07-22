@@ -12,18 +12,21 @@ function App() {
 		{
 			position: "left",
 			type: "text",
+			title: "Hash Talk",
 			text: "ハッシュ化した文字列で会話したいことってありますよね！？笑",
 			date: new Date(),
 		},
 		{
 			position: "left",
 			type: "text",
+			title: "Hash Talk",
 			text: "ハッシュ化アルゴリズムを選択して、好きなテキストを入力してください！",
 			date: new Date(),
 		},
 		{
 			position: "left",
 			type: "text",
+			title: "Hash Talk",
 			text: "ハッシュ化して表示します！",
 			date: new Date(),
 		},

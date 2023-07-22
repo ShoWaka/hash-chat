@@ -13,6 +13,7 @@ export const InputArea = () => {
 		messagesClone.push({
 			position: "right",
 			type: "text",
+			title: "あなた",
 			text: input,
 			date: new Date(),
 		});
@@ -21,6 +22,7 @@ export const InputArea = () => {
 			messagesClone.push({
 				position: "left",
 				type: "text",
+				title: "Hash Talk",
 				text: shatxt,
 				date: new Date(),
 			});
