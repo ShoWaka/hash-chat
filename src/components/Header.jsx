@@ -11,7 +11,7 @@ export const Header = () => {
 		<>
 			<div className="flex mb-10">
 				<div className="w-full">
-					<img className="w-1/5" src={icon} alt="" />
+					<img className="lg:w-1/4 w-1/2" src={icon} alt="" />
 				</div>
 				<div className="ml-auto">
 					<div className=" bg-white text-start">
